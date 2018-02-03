@@ -1,0 +1,15 @@
+<?php
+/**
+ * @var LCB_Trustisto_Block_Index
+ */
+$product = $this->getProduct();
+if ($product):
+?>
+<script>
+    SP.go('viewProduct', "<?php echo $product->getId(); ?>", {
+        product: "<?php echo Mage::helper('core')->escapeHtml($product->getName()); ?>",
+        link: "<?php echo $product->getProductUrl(); ?>",
+        image: "<?php echo $product->getImageUrl(); ?>"
+    })
+</script>
+<?php endif; ?>

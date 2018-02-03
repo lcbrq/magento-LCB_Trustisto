@@ -1,0 +1,25 @@
+<?php
+/**
+ * @var LCB_Trustisto_Block_Index
+ */
+$order = $this->getOrder();
+$address = $order->getBillingAddress();
+?>
+<script type="text/javascript">
+<?php
+foreach ($order->getAllVisibleItems() as $item):
+    $product = $item->getProduct();
+    ?>
+        SP.go('buyProduct', "<?php echo $product->getId(); ?>", {
+            firstname: "<?php echo Mage::helper('core')->escapeHtml($order->getCustomerFirstname()); ?>",
+            city: "<?php echo Mage::helper('core')->escapeHtml($address->getCity()); ?>",
+            product: "<?php echo Mage::helper('core')->escapeHtml($item->getName()); ?>",
+            link: "<?php echo $product->getProductUrl(); ?>",
+            image: "<?php echo $product->getImageUrl(); ?>",
+            order: "<?php echo $order->getIncrementId(); ?>",
+            quantity: <?php echo round($item->getQtyOrdered()); ?>,
+            price: <?php echo number_format($item->getPriceInclTax(), 2, '.', ''); ?>,
+            sum: <?php echo number_format($item->getRowTotalInclTax(), 2, '.', ''); ?>
+        });
+<?php endforeach; ?>
+</script>

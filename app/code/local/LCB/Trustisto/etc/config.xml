@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <LCB_Trustisto>
+            <version>0.1.0</version>
+        </LCB_Trustisto>
+    </modules>
+    <frontend>
+        <layout>
+            <updates>
+                <trustisto>
+                    <file>trustisto.xml</file>
+                </trustisto>
+            </updates>
+        </layout>
+    </frontend>
+    <global>
+        <helpers>
+            <lcb_trustisto>
+                <class>LCB_Trustisto_Helper</class>
+            </lcb_trustisto>
+        </helpers>
+        <blocks>
+            <lcb_trustisto>
+                <class>LCB_Trustisto_Block</class>
+            </lcb_trustisto>
+        </blocks>
+    </global>
+</config> 

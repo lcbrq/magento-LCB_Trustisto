@@ -1,0 +1,4 @@
+app/code/local/LCB/Trustisto
+app/design/frontend/base/default/layout/trustisto.xml
+app/design/frontend/base/default/template/trustisto
+app/etc/modules/LCB_Trustisto.xml
